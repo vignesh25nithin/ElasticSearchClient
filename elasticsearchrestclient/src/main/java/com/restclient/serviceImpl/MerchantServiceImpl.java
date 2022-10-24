@@ -32,13 +32,16 @@ public class MerchantServiceImpl implements MerchantService {
   public Response getMerchant(String id) {
     Response response = new Response();
     try {
-      Optional<Merchant> merchantOptional = merchantRepository.findById(id);
-      if (merchantOptional.isPresent()) {
-        response.setPayload(merchantOptional.get());
-        ResponseUtil.success(response);
-      } else {
-        ResponseUtil.error(response, "NOT FOUND");
-      }
+      List<Merchant> merchants = merchantRepository.findByVisaValueMerchantIdContaining(id);
+      response.setPayload(merchants);
+      ResponseUtil.success(response);
+      //      Optional<Merchant> merchantOptional = merchantRepository.findById(id);
+      //      if (merchantOptional.isPresent()) {
+      //        response.setPayload(merchantOptional.get());
+      //        ResponseUtil.success(response);
+      //      } else {
+      //        ResponseUtil.error(response, "NOT FOUND");
+      //      }
     } catch (Exception e) {
       ResponseUtil.fail(response, e.getMessage());
     }
