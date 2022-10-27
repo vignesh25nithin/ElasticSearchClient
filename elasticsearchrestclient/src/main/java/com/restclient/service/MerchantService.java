@@ -9,7 +9,5 @@ public interface MerchantService {
 
   Response getMerchant(String id);
 
-  Response updateMerchant(String id, Merchant merchant);
-
   Response deleteMerchant(String id);
 }

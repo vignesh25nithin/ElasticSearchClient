@@ -9,25 +9,25 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 @Setter
 public class Review {
 
-  @Field(type = FieldType.Text, name = "author_name")
+  @Field(type = FieldType.Keyword, name = "author_name")
   private String authorName;
 
-  @Field(type = FieldType.Text, name = "author_url")
+  @Field(type = FieldType.Keyword, name = "author_url")
   private String authorUrl;
 
-  @Field(type = FieldType.Text, name = "language")
+  @Field(type = FieldType.Keyword, name = "language")
   private String language;
 
-  @Field(type = FieldType.Text, name = "profile_photo_url")
+  @Field(type = FieldType.Keyword, name = "profile_photo_url")
   private String profilePhotoUrl;
 
   @Field(type = FieldType.Long, name = "rating")
   private Long rating;
 
-  @Field(type = FieldType.Text, name = "relative_time_description")
+  @Field(type = FieldType.Keyword, name = "relative_time_description")
   private String relativeTimeDescription;
 
-  @Field(type = FieldType.Text, name = "text")
+  @Field(type = FieldType.Keyword, name = "text")
   private String text;
 
   @Field(type = FieldType.Object, name = "time")
